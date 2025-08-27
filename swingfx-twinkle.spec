@@ -10,10 +10,10 @@ Source0:		https://github.com/spreiter301/Twinkle/archive/master/swingfx-twinkle.
 
 ExclusiveArch:	%{java_arches} noarch
 
-%if 0%{?fedora} < 40 || (0%{?rhel} && 0%{?rhel} < 10)
-BuildRequires:  maven-local-openjdk11
-%else
+%if 0%{?fedora} >= 40 || 0%{?rhel} >= 10
 BuildRequires:  maven-local
+%else
+BuildRequires:  maven-local-openjdk11
 %endif
 BuildRequires:	mvn(ch.swingfx:core)
 
